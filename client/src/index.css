@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-elicps {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+}
+a {
+  color: #2563eb;
+}
+.__disabled_link {
+  pointer-events: none; /* Disable pointer events */
+  color: rgb(
+    231,
+    231,
+    231
+  ); /* Optionally change text color to indicate disabled state */
+  text-decoration: none; /* Optionally remove underline */
+  cursor: default; /* Change cursor to default to indicate non-interactivity */
+  background: rgb(190, 190, 190);
+}
+
+.loader {
+  width: 25px;
+  height: 25px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, purple) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
