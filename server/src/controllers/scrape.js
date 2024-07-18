@@ -98,7 +98,7 @@ export const getScrapeData = asyncHandler(async (req, res) => {
     });
     return ApiResponse(res, scrapedData, SUCCESS, 201, true, UNDEFINED);
   } catch (error) {
-    return ApiResponse(res, error?.message, ERROR, 500, false, UNDEFINED);
+    return ApiResponse(res, UNDEFINED, error?.message, 400, false, UNDEFINED);
   }
 });
 
